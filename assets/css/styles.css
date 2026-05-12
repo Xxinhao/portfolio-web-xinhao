@@ -281,6 +281,71 @@ body.dark-theme {
   background-color: var(--text-color-light);
 }
 
+.wechat-button-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.wechat-button {
+  border: none;
+  outline: none;
+}
+
+.wechat-button:hover,
+.wechat-button:focus-visible {
+  box-shadow: none;
+}
+
+.wechat-qr-popup {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  width: 220px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  color: var(--title-color);
+  box-shadow: 0 16px 40px hsla(var(--hue), var(--sat), var(--lig), .15);
+  text-align: center;
+  z-index: 10;
+}
+
+.wechat-qr-popup::before {
+  content: '';
+  position: absolute;
+  top: -0.45rem;
+  right: 1rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: #ffffff;
+  transform: rotate(45deg);
+}
+
+.wechat-qr-popup p {
+  font-size: .85rem;
+  margin-bottom: .75rem;
+}
+
+.wechat-qr-image {
+  width: 100%;
+  border-radius: .75rem;
+}
+
+.wechat-button-wrapper:hover .wechat-qr-popup {
+  display: block;
+}
+
+@media screen and (min-width: 992px) {
+  .wechat-qr-popup {
+    top: 50%;
+    right: auto;
+    left: calc(100% + 2.6rem);
+    transform: translateY(-50%);
+    width: 240px;
+  }
+}
+
 /*=============== FILTERS TABS===============*/
 .filters__content {
   margin: 2rem 0 2.5rem;
