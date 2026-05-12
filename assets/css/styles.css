@@ -308,7 +308,7 @@ body.dark-theme {
   color: var(--title-color);
   box-shadow: 0 16px 40px hsla(var(--hue), var(--sat), var(--lig), .15);
   text-align: center;
-  z-index: 10;
+  z-index: 9999;
 }
 
 .wechat-qr-popup::before {
