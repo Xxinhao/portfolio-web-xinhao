@@ -1,4 +1,4 @@
-/*=============== GOOGLE FONTS ===============*/
+﻿/*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
@@ -303,25 +303,15 @@ body.dark-theme {
   left: 50%;
   right: auto;
   transform: translateX(-50%); 
-  top: calc(100% + 1rem);
+  bottom: calc(100% + 1.5rem); /* 增加偏移量，确保完全可见 */
+  top: auto;
   
-  width: 180px; /* 移动端稍微小一点，更精致 */
+  width: min(180px, calc(100vw - 2rem)); /* 响应式宽度 */
   padding: 1rem;
   background-color: #ffffff;
-  z-index: 10000; /* 确保高于 filters__content 的 z-index */
+  z-index: 10001; /* 提高z-index确保高于所有元素 */
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.wechat-qr-popup::before {
-  content: '';
-  position: absolute;
-  top: -0.45rem;
-  right: 1rem;
-  width: 0.9rem;
-  height: 0.9rem;
-  background-color: #ffffff;
-  transform: rotate(45deg);
 }
 
 .wechat-qr-popup p {
@@ -341,6 +331,7 @@ body.dark-theme {
 @media screen and (min-width: 992px) {
   .wechat-qr-popup {
     top: 50%;
+    bottom: auto;
     right: auto;
     left: calc(100% + 2.6rem);
     transform: translateY(-50%);
@@ -611,3 +602,6 @@ body.dark-theme {
     margin: 4.5rem 0 2.5rem;
   }
 }
+
+
+
