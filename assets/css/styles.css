@@ -299,16 +299,18 @@ body.dark-theme {
 .wechat-qr-popup {
   display: none;
   position: absolute;
-  top: calc(100% + 0.75rem);
-  right: 0;
-  width: 220px;
+  /* 让弹窗相对于按钮水平居中，而不是靠右 */
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%); 
+  top: calc(100% + 1rem);
+  
+  width: 180px; /* 移动端稍微小一点，更精致 */
   padding: 1rem;
-  border-radius: 1rem;
   background-color: #ffffff;
-  color: var(--title-color);
-  box-shadow: 0 16px 40px hsla(var(--hue), var(--sat), var(--lig), .15);
-  text-align: center;
-  z-index: 9999;
+  z-index: 10000; /* 确保高于 filters__content 的 z-index */
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .wechat-qr-popup::before {
